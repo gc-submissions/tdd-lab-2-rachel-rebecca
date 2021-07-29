@@ -3,6 +3,7 @@ class Cart {
         this.items = [];
     }
     add(product){
+        // this.items = [];
         return this.items.push(product);
     }
     getItemCount() {
@@ -10,7 +11,7 @@ class Cart {
     }
     getTotalBeforeTax(){
         let sumOfPrices = 0;
-        let itemPrices = items.map(product => product.price);
+        let itemPrices = this.items.map(product => product.price);
         itemPrices.forEach(function(item) {
             sumOfPrices += item;
         })
@@ -18,8 +19,8 @@ class Cart {
     }
     getTotalWithTax(){
         let sumOfPricesTaxed = 0;
-        items.forEach(function(item) {
-           sumOfPricesTaxed += item.getTotalWithTax();
+        this.items.forEach(function(item) {
+           sumOfPricesTaxed += item.getPriceWithTax();
         })
         return sumOfPricesTaxed;
     }
