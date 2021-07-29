@@ -1,10 +1,15 @@
-const Product = require("../src/js/Product")
+const Product = require("../src/js/Product");
+
 
 describe("Product", () => {
-  // arrange. used for first and second test.
+  // arrange. 
    let apples = new Product("apples", 1.00, true);
-  // arrange. used for first and second test.
+  // arrange. 
   let oranges = new Product("oranges", 0.80, true);
+  // arrange. 
+   let cherries = new Product("cherries", 3.00, true);
+  // arrange. 
+  let mangoes = new Product("mangoes", 1.20, true);
   // arrange
   let bananas = new Product("bananas", 0.50, false);
   // arrange
@@ -23,12 +28,12 @@ describe("Product", () => {
 
   test("Given a Product with taxable true, getPriceWithTax returns the price + 10%", () => {
     // assert
-    expect(apples.getPriceWithTax()).toBeCloseTo(1.10);
+    expect(cherries.getPriceWithTax()).toBeCloseTo(3.30);
   })
 
   test("Given a Product with taxable true, getPriceWithTax returns the price + 10%", () => {
     // assert
-    expect(oranges.getPriceWithTax()).toBeCloseTo(0.88);
+    expect(mangoes.getPriceWithTax()).toBeCloseTo(1.32);
   })
 
   test("Given a Product with taxable false, getPriceWithTax returns just the price.", () => {
