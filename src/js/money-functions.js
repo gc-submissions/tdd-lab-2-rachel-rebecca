@@ -9,6 +9,10 @@ function formatCurrency(amount) {
     return "$" + twoDecimals;
 }
 
+// const formatCurrency =(amount) => {
+//     return amount > 0 ? "$" + Math.round(amount).toFixed(2) : "-$" + Math.round(amount).toFixed(2).substring(1);
+// };
+
 
 
 
