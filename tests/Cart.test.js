@@ -26,7 +26,7 @@ describe("Cart", () => {
     // act.
     fruits.add(apples);
     // assert.
-    expect(fruits.items.length).toEqual(1);
+    expect(fruits.items).toEqual([apples]);
   });
 
   test("Calling add twice leaves a total of two Products in the items array", () => {
@@ -49,14 +49,25 @@ describe("Cart", () => {
     expect(fruits.getItemCount()).toEqual(3);
   });
 
+  test("getTotalBeforeTax returns the sum of the price of all Products in the items array.", () => {
+    // assert.
+    expect(fruits.getTotalBeforeTax()).toBeCloseTo(4.8);
+  });
+
+  test("getTotalBeforeTax returns the sum of the price of all Products in the items array.", () => {
+    //act
+    fruits.add(bananas); // non-taxable item added.
+    // assert.
+    expect(fruits.getTotalBeforeTax()).toBeCloseTo(5.3);
+  });
+
   test("getTotalWithTax returns the sum of the getPriceWithTax() method of all Products in the items array", () => {
     // assert.
-    expect(fruits.getTotalWithTax()).toBeCloseTo(5.28);
+    expect(fruits.getTotalWithTax()).toBeCloseTo(5.78);
   });
 
   test("getTotalWithTax returns the sum of the getPriceWithTax() method of all Products in the items array", () => {
     // act
-    fruits.add(bananas); // non taxable
     fruits.add(grapes); // non taxable
     // assert.
     expect(fruits.getTotalWithTax()).toBeCloseTo(7.78);

@@ -37,6 +37,18 @@ describe("getCoins", () => {
     expect(getCoins(32)).toEqual({"dimes": 0, "nickels": 1, "pennies": 2, "quarters": 1})
   })
 
+  test("10 cents produces: quarters: 0, dimes: 1, nickels: 0, pennies: 0.", () => {
+    expect(getCoins(10)).toEqual({"quarters": 0, "dimes": 1, "nickels": 0, "pennies": 0.})
+  })
+
+  test("27 cents produces: quarters: 1, dimes: 0, nickels: 0, pennies: 2.", () => {
+    expect(getCoins(27)).toEqual({"dimes": 0, "nickels": 0, "pennies": 2, "quarters": 1})
+  })
+
+  test("68 cents produces: quarters: 2, dimes: 1, nickels: 1, pennies: 3.", () => {
+    expect(getCoins(68)).toEqual({"dimes": 1, "nickels": 1, "pennies": 3, "quarters": 2})
+  })
+
 
 
 

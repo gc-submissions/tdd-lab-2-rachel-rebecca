@@ -19,10 +19,9 @@ function getCoins(cents) {
     dimes = Math.floor(cents / 10);
     cents = cents % 10;
     nickels = Math.floor(cents / 5);
-    cents = cents / 5;
-    pennies = Math.ceil(cents / 1);
-    cents = cents % 1;
-
+    cents = cents % 5;
+    pennies = Math.floor(cents / 1);
+   
     let change = {
         quarters: quarters,
         dimes: dimes,
@@ -34,4 +33,4 @@ function getCoins(cents) {
 
 module.exports = {
     formatCurrency, getCoins
-} // using destructing to grab more than one function from one source file
+} // using destructuring to grab more than one function from one source file
