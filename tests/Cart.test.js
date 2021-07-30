@@ -26,7 +26,7 @@ describe("Cart", () => {
     // act.
     fruits.add(apples);
     // assert.
-    expect(fruits.items).toEqual([apples]);
+    expect(fruits.items.length).toEqual(1);
   });
 
   test("Calling add twice leaves a total of two Products in the items array", () => {

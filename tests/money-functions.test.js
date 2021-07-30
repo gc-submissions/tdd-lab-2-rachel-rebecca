@@ -1,4 +1,4 @@
-const formatCurrency = require("../src/js/money-functions")
+const {formatCurrency, getCoins} = require("../src/js/money-functions")
 
 describe("formatCurrency", () => {
     test("Given the amount 0, it returns $0.00.", () => {
@@ -32,5 +32,12 @@ describe("formatCurrency", () => {
 });
 
 describe("getCoins", () => {
-  test.todo("add getCoins tests here");
+ 
+  test("32 cents produces: quarters: 1, dimes: 0, nickels: 1, pennies: 2.", () => {
+    expect(getCoins(32)).toEqual({"dimes": 0, "nickels": 1, "pennies": 2, "quarters": 1})
+  })
+
+
+
+
 });
