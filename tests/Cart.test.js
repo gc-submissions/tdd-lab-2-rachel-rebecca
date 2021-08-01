@@ -4,10 +4,7 @@ const Product = require("../src/js/Product");
 describe("Cart", () => {
   // arrange.
   let fruits = new Cart();
-  // arrange.
-  let apples = new Product("apples", 1.0, true);
-  // arrange.
-  let oranges = new Product("oranges", 0.8, true);
+  
   // arrange.
   let cherries = new Product("cherries", 3.0, true);
   // arrange.
@@ -23,6 +20,8 @@ describe("Cart", () => {
   });
 
   test("Calling add once adds one product to the items array.", () => {
+    // arrange.
+    let apples = new Product("apples", 1.0, true);
     // act.
     fruits.add(apples);
     // assert.
@@ -30,7 +29,9 @@ describe("Cart", () => {
   });
 
   test("Calling add twice leaves a total of two Products in the items array", () => {
-    // act.
+    // arrange.
+    let oranges = new Product("oranges", 0.8, true);
+    // act
     fruits.add(oranges); // second time calling add
     // assert.
     // expect(fruits.items).toEqual([oranges]);

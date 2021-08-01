@@ -1,5 +1,5 @@
 function formatCurrency(amount) {
-    amount = Math.ceil(amount * 100) / 100;
+    // amount = Math.ceil(amount * 100) / 100; <-- didn't need this
     let twoDecimals = amount.toFixed(2);
     if (twoDecimals.includes("-")) {
         let removeMinus = twoDecimals.substring(1)
